@@ -1,0 +1,69 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.page-container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+/*标题头*/
+.page-title {
+  width: 100%;
+  height: 0.75rem;
+  margin: 0;
+  padding-left: 0.5rem;
+  line-height: 0.75rem;
+  text-align: left;
+  font-size: 26px;
+}
+/*电影信息列表*/
+.page-lists-container {
+  width: 100%;
+  height: auto;
+  margin: 0.25rem 0;
+  padding: 0;
+}
+.page-lists {
+  width: 90%;
+  height: auto;
+  padding: 0;
+  margin: 0 auto;
+}
+/*单个区块*/
+.list {
+  display: inline-block;  
+  width: 2.7rem;
+  height: 4.7rem;
+  margin: .5rem .15rem 0 0;
+}
+.list-img {
+  width: 100%;
+  height: 3.7rem;
+}
+.list-img img {
+  width: 100%;
+  height: 100%;
+}
+.list-info {
+  width: 100%;
+  height: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.list-info-name, .list-info-comment {
+  width: 100%;
+  height: .5rem;
+  line-height: .5rem;
+  text-align: center;
+}
+.list-info-name {
+  color: #333333;
+}
+.list-info-comment {
+  color: #b0b0b0;
+}
