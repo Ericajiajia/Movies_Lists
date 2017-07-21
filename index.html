@@ -2,6 +2,7 @@
 <html lang="zh_CN">
 <head>
     <meta charset="UTF-8">
+    <script src="./static/js/jquery-3.2.1.js"></script>
     <script src="./static/js/flexible.debug.js"></script>
     <script src="./static/js/flexible_css.debug.js"></script>
     <link rel="stylesheet" href="./static/css/index.css">
@@ -24,16 +25,28 @@
         </ul>
     </div>
 </div>
-<script src="./static/js/data.js"></script>
-<script src="./static/js/jquery-3.2.1.js"></script>
 <script>
 var pageLists = $('.page-lists')
-var createList = function () {
+var createList = function (postData) {
     for (let i = 0; i < 10; i ++) {
-        $('.page-lists').append('<li class="list"><div class="list-img"><img src="' + data.subjects[i].images.large + '" alt="' + data.subjects[i].images.large + '"></div><div class="list-info"><div class="list-info-name">' + data.subjects[i].title + '</div><div class="list-info-comment">评分&nbsp;&nbsp;' + data.subjects[i].rating.average + '</div></div></li>')
+        $('.page-lists').append('<li class="list"><div class="list-img"><img src="' + postData.subjects[i].images.large + '" alt="' + postData.subjects[i].images.large + '"></div><div class="list-info"><div class="list-info-name">' + postData.subjects[i].title + '</div><div class="list-info-comment">评分&nbsp;&nbsp;' + postData.subjects[i].rating.average + '</div></div></li>')
     }
 }
-createList()
+$.ajax({
+    url: '/api/v1/movie/top250',
+    type: 'GET',
+    dataType: 'json'
+})
+.done(function(data) {
+    createList(data);
+})
+.fail(function() {
+    console.log("error");
+})
+.always(function() {
+    console.log("complete");
+});
+
 </script>
 </body>
 </html>
