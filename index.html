@@ -27,6 +27,12 @@
 </div>
 <script>
 var pageLists = $('.page-lists')
+/**
+ * [createList description]
+ * @param  {[type]} postData [description]
+ * @return {[type]}          [description]
+ */
+// 使用DocBlockr来给函数写注释（/**和Enter）
 var createList = function (postData) {
     for (let i = 0; i < 10; i ++) {
         $('.page-lists').append('<li class="list"><div class="list-img"><img src="' + postData.subjects[i].images.large + '" alt="' + postData.subjects[i].images.large + '"></div><div class="list-info"><div class="list-info-name">' + postData.subjects[i].title + '</div><div class="list-info-comment">评分&nbsp;&nbsp;' + postData.subjects[i].rating.average + '</div></div></li>')
